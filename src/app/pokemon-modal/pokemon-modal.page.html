@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ data.name.fr }} or {{ data.name.en }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Image:</ion-label>
+    <img src="{{ data.sprites.regular }}" alt="image">
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Type:</ion-label>
+    <ion-row>
+      <ion-col size="auto" *ngFor="let type of data.types">
+        <img src="{{ type.image }}" alt="image">
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Sexe:</ion-label>
+    <ion-list>
+      <ion-item>
+        <ion-text>Female: {{ data.sexe.female }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>Male: {{ data.sexe.male }}</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Hauteur:</ion-label>
+    <ion-text>{{ data.height }}</ion-text>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Largeur:</ion-label>
+    <ion-text>{{ data.weight }}</ion-text>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Catch Rate:</ion-label>
+    <ion-text>{{ data.catch_rate }}</ion-text>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Talent:</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let talent of data.talents">
+        {{ talent.name }}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Groupe d'oeuf:</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let stat of data.egg_groups">
+        {{ stat }}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Evolution:</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let evolution of data.evolution.next">
+        <ion-label>{{ evolution.name }}</ion-label>
+        <ion-label>{{ evolution.condition }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+</ion-content>

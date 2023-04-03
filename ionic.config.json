@@ -1,0 +1,7 @@
+{
+  "name": "PokedAIX",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

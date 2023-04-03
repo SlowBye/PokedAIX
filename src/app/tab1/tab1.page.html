@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      PokedAIX
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <ion-content>
+
+    <div *ngFor="let pokemon of data">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ pokemon.name.fr }} - N°{{pokemon.pokedexId}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img src="{{ pokemon.sprites.regular }}" alt="image">
+          <img *ngFor="let type of pokemon.types" src="{{ type.image }}" alt="image">
+        </ion-card-content>
+        <ion-footer>
+          <ion-button (click)="openPokemonModal(pokemon)">Voir plus</ion-button>
+        </ion-footer>
+      </ion-card>
+    </div>
+  </ion-content>
+  
+</ion-content>
