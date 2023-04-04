@@ -1,14 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <button ion-button icon-only (click)="toggleFilters()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       PokedAIX
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-  </ion-header>
+  <div *ngIf="showFilters">
+    <ion-checkbox labelPlacement="start">Plante</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Feu</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Eau</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Acier</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Poison</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Psy</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Dragon</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Electrik</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Insecte</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Sol</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Tenebre</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Vol</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Normal</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Combat</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Fée</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Glace</ion-checkbox>
+    <ion-checkbox labelPlacement="start">Roche</ion-checkbox>
+  </div>
 
   <div *ngFor="let pokemon of data">
     <ion-card>

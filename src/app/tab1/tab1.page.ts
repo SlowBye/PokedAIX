@@ -14,7 +14,7 @@ import { PokemonModalPage } from '../pokemon-modal/pokemon-modal.page';
   imports: [IonicModule, ExploreContainerComponent, CommonModule],
 })
 export class Tab1Page {
-
+  showFilters = false;
   data: any;
   constructor(private http: HttpClient, public modalController: ModalController) {
     this.http.get('../assets/pokeapi.json').subscribe(data => {
@@ -31,6 +31,10 @@ export class Tab1Page {
       }
     });
     return await modal.present();
+  }
+
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
   }
 
 }
